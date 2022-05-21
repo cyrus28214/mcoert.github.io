@@ -1,6 +1,5 @@
 import React from "react";
-import {Route,Link } from "react-router-dom";
-import "./App.css";
+import "./TestPage.css";
 
 class Title extends React.Component{
   render(props){
@@ -106,7 +105,7 @@ class Footer extends React.Component{
   }
 }
 
-class App extends React.Component{
+class TestPage extends React.Component{
   render(props){
     return (<div>
       <div className="background" style={{"padding-bottom":"50px"}}>
@@ -118,4 +117,4 @@ class App extends React.Component{
   }
 }
 
-export default App;
+export default TestPage;
