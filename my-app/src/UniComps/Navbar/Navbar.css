@@ -1,0 +1,31 @@
+.navbar{
+    position: sticky;
+    top:0;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    box-shadow: 0 3px 5px black;
+    width: 100%;
+    background-color: white;
+    border-radius: 0 0 5px 5px;
+    overflow: hidden;
+}
+
+.the-alpha{
+    color:red;
+    font-size:24;
+    padding: 10px 20px 10px 20px;
+}
+
+.navbar-item{
+    background-color: white;
+    padding: 10px 20px 10px 20px;
+}
+
+.navbar-item:hover{
+    background-color: slategray;
+}
+
+.navbar-item-active{
+    background-color: slategray;
+}

@@ -1,9 +1,9 @@
 import React from "react";
-import "./TestPage.css";
+import style from "./TestPage.module.css";
 
 class Title extends React.Component{
   render(props){
-    return(<div className="site-title">{this.props.title}</div>);
+    return(<div className={style["site-title"]}>{this.props.title}</div>);
   }
 }
 
@@ -16,13 +16,13 @@ class Content extends React.Component{
   }
 
   render(props){
-    return(<div className="text-content">
+    return(<div className={style["text-content"]}>
         {this.state.inner}
     </div>);
   }
 
   componentDidMount(){
-    fetch("/Diana.txt")
+    fetch("/text/Diana.txt")
       .then(response => response.text())
       .then(result => {
         this.setState({
@@ -35,7 +35,7 @@ class Content extends React.Component{
 class Card extends React.Component{
   render(props){
     return(
-      <div className="transparent-card">
+      <div className={style["transparent-card"]}>
         <Navbar items={[1,2,3]} />
         <Content />
       </div>
@@ -46,7 +46,7 @@ class Card extends React.Component{
 class Navbar extends React.Component{
   render(props){
     return(
-      <div className="navbar">
+      <div className={style["navbar"]}>
         {
           this.props.items.map((item,index)=>(
             <li key={index}>{item}</li>
@@ -66,7 +66,7 @@ class LogoHref extends React.Component{
     }
     else alt = this.props.alt;
     return(
-      <a className="logo-href" href={this.props.href} target="_blank" rel="noreferrer">
+      <a className={style["logo-href"]} href={this.props.href} target="_blank" rel="noreferrer">
         <img src={this.props.img} alt={alt} style={{"margin":"20px 10px 20px 10px"}}/>
       </a>
     )
@@ -89,15 +89,15 @@ let logo_hrefs = [
 class Footer extends React.Component{
   render(props){
     return(<div>
-      <div className="footer">
+      <div className={style["footer"]}>
         <p>
           放一些logo让我看上去很<del>牛批</del>傻批
         </p>
       </div>
 
-      <div className="footer">
-        {logo_hrefs.map((item)=>{
-          return <LogoHref img={item.img} href={item.href}/>
+      <div className={style["footer"]}>
+        {logo_hrefs.map((item, index)=>{
+          return <LogoHref img={item.img} href={item.href} key={index}/>
         })}
       </div>
     </div>
@@ -108,7 +108,7 @@ class Footer extends React.Component{
 class TestPage extends React.Component{
   render(props){
     return (<div>
-      <div className="background" style={{"padding-bottom":"50px"}}>
+      <div className={style["background"]}>
         <Title title="AlphaHood" />
         <Card />        
       </div>
